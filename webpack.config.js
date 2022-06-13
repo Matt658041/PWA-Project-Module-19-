@@ -13,6 +13,13 @@ const config = {
     schedule: './assets/js/schedule.js',
     tickets: './assets/js/tickets.js'
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './'),
+    },
+    compress: true,
+    port: 8080,
+  },
   output: {
     path: path.join(__dirname + "/dist"),
     filename: "[name].bundle.js"
@@ -61,7 +68,8 @@ const config = {
         src: path.resolve("assets/img/icons/icon-512x512.png"),
         sizes: [96, 128, 192, 256, 384, 512],
        destination: path.join("assets", "icons")
-      }]
+      }],
+      publicPath: "./"
     })
   ],
   mode: 'development'
